@@ -1,103 +1,134 @@
-import React from 'react'
-import col from "../assets/1.jpg"
-import lab from "../assets/1.jpg"
-import conference from "../assets/1.jpg"
-const About = () => {
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const AboutUsPage = () => {
+  // Team data
+  const team = [
+    "Mohammad Tauqeer Ansari",
+    "Kirti Dixit",
+    "Ariba Anis",
+    "Anuja Katiyar",
+    "Atah Ur Rehman",
+    "Amay Mishra",
+  ];
+
   return (
-    <div>
-     <section className="bg-gray-100">
-  <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-      <div className="max-w-lg">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-          About The University 
-        </h2>
-        <p className="mt-4 text-gray-600 text-lg">
-        Harcourt Butler Technical University, Kanpur (Formerly HBTI, Kanpur) was established in 1921 and has a glorious history and has always been at the forefront of technological developments and the growth of industries in the country since its inception. The Institute began as the Government Technological Institute, Uttar Pradesh in 1921. The Institute was renamed Harcourt Butler Technological Institute in 1926 in honor of the name of Sir Spencer Harcourt Butler, the then Governor of U.P. Degree courses in Oil Technology were started in 1921, and Chemical Engineering was started in 1954 and after that number of undergraduate and post graduate courses were started. On March 26, 1965, it was upgraded from a Government Department status to an Autonomous Institution. It was upgraded to Harcourt Butler Technical University, Kanpur on September 01, 2016, by Govt. of UP. The University spreads across two campuses - East Campus (77 acres) and West Campus (271 acres) situated approximately 3 kilometers apart. The University provides a congenial environment for the holistic growth and all-round development of the students.
-        </p>
-        <div className="mt-8">
-          <a href="https://hbtu.ac.in/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 font-medium">
-            Learn more about us
-            <span className="ml-2">→</span>
-          </a>
+    <div className="bg-gradient-to-r from-orange-100 to-yellow-200">
+
+      {/* About Us Section */}
+      <section className="text-center px-8 py-16">
+        <motion.h2 
+          className="text-3xl font-semibold text-gray-800 mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          About DHAAGA
+        </motion.h2>
+        <motion.p
+          className="text-lg text-gray-700 max-w-4xl mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        >
+          DHAAGA is more than just an e-commerce platform; it's a celebration of India's rich cultural heritage. We aim to bring authentic, handcrafted products from local artisans directly to your doorstep. From Banarasi sarees to handwoven carpets, our mission is to empower artisans, uplift their traditional skills, and connect them to a global audience.
+          Our products reflect the dedication, love, and passion of the artisans who have passed down their craft through generations. Every item you purchase from DHAAGA tells a story—a story of artistry, heritage, and the timeless beauty of Indian traditions.
+        </motion.p>
+      </section>
+
+      {/* Customer Reviews Section */}
+      <section className="bg-gray-100 py-16">
+        <motion.h2
+          className="text-3xl font-semibold text-center text-gray-800 mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          Customer Reviews
+        </motion.h2>
+        <div className="flex justify-center space-x-8">
+          {/* Review 1 */}
+          <motion.div 
+            className="bg-white p-8 rounded-lg shadow-lg w-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <p className="text-lg text-gray-700 mb-4">
+              "I absolutely love the Banarasi saree I purchased from DHAAGA. The quality is unmatched, and it arrived beautifully packaged. Truly an exceptional shopping experience!"
+            </p>
+            <p className="font-semibold text-gray-800">Anjali Sharma</p>
+            <p className="text-gray-600">Banaras, India</p>
+          </motion.div>
+
+          {/* Review 2 */}
+          <motion.div 
+            className="bg-white p-8 rounded-lg shadow-lg w-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            <p className="text-lg text-gray-700 mb-4">
+              "The wooden crafts I bought were absolutely stunning! I could see the effort and passion that went into every piece. Will definitely be back for more!"
+            </p>
+            <p className="font-semibold text-gray-800">Ravi Kumar</p>
+            <p className="text-gray-600">Delhi, India</p>
+          </motion.div>
+
+          {/* Review 3 */}
+          <motion.div 
+            className="bg-white p-8 rounded-lg shadow-lg w-80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1.5 }}
+          >
+            <p className="text-lg text-gray-700 mb-4">
+              "DHAAGA offers a seamless online shopping experience. I’m so happy with my purchase of handcrafted pottery. It’s even more beautiful in person!"
+            </p>
+            <p className="font-semibold text-gray-800">Neha Singh</p>
+            <p className="text-gray-600">Mumbai, India</p>
+          </motion.div>
         </div>
-      </div>
-      <div className="mt-12 md:mt-0">
-        <img
-          src={col}
-          alt="About Us Image"
-          className="object-cover rounded-lg shadow-md"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
+      {/* Meet the Team Section */}
+      <section className="px-8 py-16 text-center">
+        <motion.h2 
+          className="text-3xl font-semibold text-gray-800 mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          Meet Our Team
+        </motion.h2>
 
-
-
-<section className="bg-gray-100">
-  <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-      <div className="max-w-lg">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        ABOUT THE DEPARTMENT
-        </h2>
-        <p className="mt-4 text-gray-600 text-lg">
-        The Department of Biochemical Engineering at Harcourt Butler Technical University (formerly H.B.T.I.), Kanpur, became an independent entity in September 2016. Originally established in 1964 as part of the Biochemical Engineering and Food Technology department, it now offers a four-year B.Tech and two-year M.Tech in Chemical Technology with a specialization in Biochemical Engineering, alongside a Ph.D. program. The department boasts well-equipped laboratories to support modern industry and research needs, ensuring students are trained in the latest technologies in Biochemical Engineering, Biotechnology and B.Pharm. Faculty members play a key role in imparting skills that prepare students for careers in industries and research organizations. Over the years, the department has received financial backing from prominent organizations like CST, DBT, and the World Bank for various projects. Recently, it secured three CPCB Delhi projects. The department regularly hosts national and international seminars, workshops, and faculty development programs to enhance student creativity and productivity. Alumni hold prestigious positions in government and private sectors, contributing to national development. The department is committed to continuous improvement by updating faculty and students through modernized labs and periodic curriculum reviews.
-        </p>
-        <div className="mt-8">
-          <a href="https://hbtu.ac.in/bio-chemical-engineering-2/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 font-medium">
-            Learn more about us
-            <span className="ml-2">→</span>
-          </a>
+        <div className="grid md:grid-cols-3 gap-8">
+          {team.map((member, index) => (
+            <AnimatePresence key={index}>
+              <motion.div 
+                className="bg-white p-8 rounded-lg shadow-lg"
+                initial={{ opacity: 0, x: 100 }}  // Start from the right
+                whileInView={{ opacity: 1, x: 0 }} // Slide in and fade in
+                exit={{ opacity: 0, x: -100 }} // Slide out when leaving view
+                transition={{ duration: 1, delay: index * 0.5 }} // Staggered animation
+                viewport={{ once: false }}  // Keep animating when it comes in and out of view
+              >
+                <div className="mb-4">
+                  <img 
+                    src="/path-to-team-member-image.jpg" 
+                    alt={member} 
+                    className="w-24 h-24 object-cover rounded-full mx-auto"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800">{member}</h3>
+                <p className="text-gray-600">Team Member</p>
+              </motion.div>
+            </AnimatePresence>
+          ))}
         </div>
-      </div>
-      <div className="mt-12 md:mt-0">
-        <img
-          src={lab}
-          alt="About Us Image"
-          className="object-cover rounded-lg shadow-md"
-        />
-      </div>
+      </section>
     </div>
-  </div>
-</section>
+  );
+};
 
-
-<section className="bg-gray-100">
-  <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-      <div className="max-w-lg">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        ABOUT THE CONFERENCE
-        </h2>
-        <p className="mt-4 text-gray-600 text-lg">
-        The Department of Biochemical Engineering, HBTU Kanpur, proudly presents "BIO-METACON 2025," a premier international conference centered around the theme "Sustainable Innovation and Challenges: Recent Trends in Bioengineering." Scheduled for 3rd-5th March 2025, this event aims to foster discussions and collaborations among leading academics, researchers, and industry experts in the field of Bioengineering.
-BIO-METACON 2025 will provide a dynamic platform to explore the latest advancements and emerging challenges in bioengineering, focusing on sustainable innovation in biotechnology, biochemical processes, and bio-product development. 
-Attendees will have the opportunity to participate in keynote sessions, technical presentations, panel discussions, and workshops led by distinguished speakers from both academia and industry. The conference encourages knowledge exchange, networking, and collaboration to address critical global challenges such as climate change, sustainable development, and health care.
-Join us at HBTU Kanpur to engage with thought leaders, share groundbreaking research, and contribute to shaping the future of bioengineering. </p>
-        <div className="mt-8">
-          <a href="https://hbtu.ac.in/bio-chemical-engineering-2/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 font-medium">
-            Learn more about us
-            <span className="ml-2">→</span>
-          </a>
-        </div>
-      </div>
-      <div className="mt-12 md:mt-0">
-        <img
-          src={conference}
-          alt="About Us Image"
-          className="object-cover rounded-lg shadow-md"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-
-    </div>
-  
-  )
-}
-
-export default About
+export default AboutUsPage;

@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { FaCartPlus, FaHeart } from 'react-icons/fa';
+import sticks from "../assets/Products/PoojaSticks.jpg"; // Correct image import
+import brass from "../assets/Products/diya.jpg";
 
 const products = [
   {
     id: 1,
     name: 'Pooja Sticks',
     price: '₹120',
-    imageSrc: 'https://via.placeholder.com/300x300.png?text=Pooja+Sticks',
+    imageSrc: sticks,
     imageAlt: 'Traditional Pooja sticks used during religious rituals.',
   },
   {
     id: 2,
     name: 'Brass Diya Lamp',
     price: '₹250',
-    imageSrc: 'https://via.placeholder.com/300x300.png?text=Brass+Diya+Lamp',
+    imageSrc: brass,
     imageAlt: 'Brass Diya lamp for lighting up festive occasions.',
   },
   {
@@ -91,17 +93,21 @@ export default function Shop() {
               {/* Product Card */}
               <div
                 className="relative bg-white rounded-lg shadow-sm overflow-hidden transition-transform duration-300 hover:scale-105"
-                style={{ height: '400px', width: '280px' }} // Adjust the aspect ratio to make it longer lengthwise
+                style={{ height: '380px', width: '280px' }} // Card height and width
               >
-                <img
-                  alt={product.imageAlt}
-                  src={product.imageSrc}
-                  className="w-full h-60 object-cover object-center transition-all duration-300 group-hover:scale-105"
-                />
+                {/* Image Container */}
+                <div className="w-full h-full relative">
+                  <img
+                    alt={product.imageAlt}
+                    src={product.imageSrc}
+                    className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"  // Ensure the image fills the container and zooms on hover
+                  />
+                </div>
+
                 {/* Wishlist Icon */}
                 <div
                   onClick={() => handleWishlistClick(product.id)}
-                  className={`absolute top-2 right-2 text-xl cursor-pointer ${wishlist.has(product.id) ? 'text-red-500' : 'text-gray-600'} opacity-0 group-hover:opacity-100 transition-all duration-300`}
+                  className={`absolute top-2 right-2 text-xl cursor-pointer ${wishlist.has(product.id) ? 'text-red-500' : 'text-white'} opacity-0 group-hover:opacity-100 transition-all duration-300`}
                 >
                   <FaHeart />
                 </div>
@@ -109,7 +115,7 @@ export default function Shop() {
                 {/* Add to Cart Button */}
                 <div
                   onClick={() => handleCartClick(product.id)}
-                  className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer transition-all duration-300 ${clicked.has(product.id) ? 'bg-dark-blue' : ''} opacity-0 group-hover:opacity-100 group-hover:translate-y-0`}
+                  className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white py-2 px-4 rounded-md cursor-pointer transition-all duration-300 ${clicked.has(product.id) ? 'bg-dark-blue' : ''} opacity-0 group-hover:opacity-100 group-hover:translate-y-0`}
                 >
                   Add to Cart
                 </div>
